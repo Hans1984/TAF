@@ -11,8 +11,10 @@ Use the following commands with Anaconda to create and activate your environment
 We follow the progressive training be strategy, strat from the low resolution and increase the resolution step by step.
 
 ```
- python train.py --save_path "save dir" --base_path "data dir"
+ python train.py --save_path "./results" --base_path "./dataset/scene_1/"
 ```
+please change the base_path to your own dataset path
+
 ### Testing
 Continuing with pretrained stem:
 ```
