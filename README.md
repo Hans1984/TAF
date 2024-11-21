@@ -1,19 +1,24 @@
-# [TAF](https://taf.mpi-inf.mpg.de/): An Implicit Neural Representation for the Image Stack: Depth, All in Focus, and High Dynamic Range [Siggrapha Aisa 2023]
+# [Cinematic](https://cinegs.mpi-inf.mpg.de/): Cinematic Gaussians:  Real-Time HDR Radiance Fields with Depth of Field [Pacific Graphics 2024]
 
 
 ### Installation
 Use the following commands with Anaconda to create and activate your environment:
-  - ```conda env create -f environment.yml```
-  - ```conda activate TAF```
-
+  - ```conda env create -f environment.yaml```
+  - ```conda activate cinegs```
+Note: Our installation method is the same as that of [3DGS](https://github.com/graphdeco-inria/gaussian-splatting/tree/main). If you encounter installation issues, please refer to the issues section of that.
 
 ### Training
-We follow the progressive training be strategy, strat from the low resolution and increase the resolution step by step.
+For real dataset
+```
+python train.py -s data_path -m output_path --fd_path ./exif_info_txt/.. --ap_path ./exif_info_txt/.. --exp_path  ./exif_info_txt/.. --length_focal .. --blur
+```
 
+For rendering dataset
 ```
- python train.py --save_path "./results" --base_path "./dataset/scene_1/"
+python traing.py -s data_path -m output_path --length_focal .. --start_checkpoint pretrained_model_apth/chkpnt7000.pth --blur
 ```
-please change the base_path to your own dataset path
+
+please change the data_path to your own dataset path
 
 ### Testing
 Continuing with pretrained stem:
